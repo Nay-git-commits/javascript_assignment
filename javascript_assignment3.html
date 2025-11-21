@@ -1,128 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Add New Item</title>
+    <title>JavaScript Assignment 3</title>
   </head>
   <body>
-    <form
-      action="https://athiphat-mybackend-01.southeastasia.cloudapp.azure.com/api/product"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-      <!-- General Info -->
-      <fieldset>
-        <legend>General Info</legend>
+    <h2>Open the browser console to see the filtered result</h2>
 
-        <p>
-          <label for="itemName">Item Name</label>
-          <input
-            type="text"
-            id="itemName"
-            name="itemName"
-            size="50"
-            maxlength="500"
-          />
-        </p>
+    <script>
+      // Original array
+      const people = [
+        "Alice Anderson",
+        "Aaron Adams",
+        "Bella Brown",
+        "Brian Black",
+        "Cathy Carter",
+        "Charles Cooper",
+        "Diana Davis",
+        "Daniel Drake",
+        "Ella Evans",
+        "Ethan Edwards",
+        "Fiona Fisher",
+        "Frank Foster",
+        "Grace Green",
+        "Gavin Gray",
+        "Hannah Harris",
+        "Henry Hill",
+        "Isabella Ingram",
+        "Ian Irving",
+        "Jack Johnson",
+        "Julia James",
+      ];
 
-        <p>
-          <label for="itemDescription">Description</label><br />
-          <textarea
-            id="itemDescription"
-            name="itemDescription"
-            cols="60"
-            rows="6"
-          ></textarea>
-        </p>
+      // Choose the first letter you want to filter by
+      const targetLetter = "B"; // you can change this to "A", "C", etc.
 
-        <p>
-          <label for="coverImage">Cover Image</label>
-          <input type="file" id="coverImage" name="coverImage" />
-        </p>
+      // Use filter() to keep only names starting with targetLetter
+      const result = people.filter(function (name) {
+        return name.charAt(0) === targetLetter;
+      });
 
-        <p>
-          <label for="category">Category</label>
-          <select id="category" name="category">
-            <option value="notSpecified">Not Specified</option>
-            <option value="consumption">Consumption</option>
-            <option value="household">Household</option>
-            <option value="electronic">Electronic</option>
-            <option value="gadget">Gadget</option>
-          </select>
-        </p>
-      </fieldset>
-
-      <!-- Misc -->
-      <fieldset>
-        <legend>Misc.</legend>
-
-        <p>
-          <label for="inventoryAmount">Inventory Amount</label>
-          <input
-            type="number"
-            id="inventoryAmount"
-            name="inventoryAmount"
-            min="0"
-          />
-        </p>
-
-        <p>
-          <label for="listPrice">List Price</label>
-          <input
-            type="number"
-            id="listPrice"
-            name="listPrice"
-            min="0"
-            step="0.01"
-          />
-        </p>
-
-        <p>
-          <strong>Available Stores</strong><br />
-          <label>
-            <input type="checkbox" name="availableStore[]" value="Bangkok" />
-            Bangkok
-          </label>
-          <label>
-            <input type="checkbox" name="availableStore[]" value="Pattaya" />
-            Pattaya
-          </label>
-          <label>
-            <input type="checkbox" name="availableStore[]" value="Phuket" />
-            Phuket
-          </label>
-        </p>
-
-        <p>
-          <strong>Active Status</strong><br />
-          <label>
-            <input type="radio" name="status" value="Active" />
-            Active
-          </label>
-          <label>
-            <input type="radio" name="status" value="Inactive" />
-            Inactive
-          </label>
-        </p>
-      </fieldset>
-
-      <!-- Staff -->
-      <fieldset>
-        <legend>Staff</legend>
-
-        <p>
-          <label for="staffEmail">Staff Email</label>
-          <input
-            type="email"
-            id="staffEmail"
-            name="staffEmail"
-            size="40"
-            required
-          />
-        </p>
-      </fieldset>
-
-      <button type="submit">Submit Form</button>
-    </form>
+      // Display in console
+      console.log("Names starting with " + targetLetter + ":", result);
+    </script>
   </body>
 </html>
