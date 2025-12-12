@@ -1,0 +1,10 @@
+col-sm-6
+This makes the column take up half the width (6/12) on small screens and larger (≥576px). On very small screens (phones <576px), it will automatically stack and take full width (12/12). It is the most “responsive early” option because it activates at the smallest breakpoint.
+
+col-md-6
+This makes the column half-width only on medium screens and larger (≥768px). On screens smaller than 768px (phones and some tablets), the columns will stack vertically. This is the most commonly used breakpoint because it fits tablets and laptops well.
+
+col-lg-6
+This makes the column half-width only on large screens and larger (≥992px). On anything smaller—phones, tablets, small laptops—the columns will be stacked. This means it waits until very wide screens before placing columns side by side.
+
+Changing col-md-6 to col-sm-6 makes the layout switch to two-column earlier (on smaller devices). Changing it to col-lg-6 delays the two-column layout until the screen is much wider, causing more devices to show a stacked layout. The breakpoint you choose defines when the layout switches from stacked (1 column) to two-column (side by side).
